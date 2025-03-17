@@ -1,4 +1,4 @@
-package com.eoi.java6.leccionesdegit.ejercicio1;
+package com.eoi.java6.leccionesdegit;
 
 public class Calculator {
 
