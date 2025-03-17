@@ -1,10 +1,9 @@
-package com.eoi.java6.leccionesdegit.ejercicio1;
+package com.eoi.java6.leccionesdegit;
 
-import com.eoi.java6.leccionesdegit.Calculator;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class CalculatorTest {
+class CalculatorTest {
 
     @Test
     void testSumar() {
@@ -16,5 +15,14 @@ public class CalculatorTest {
     void testDividir() {
         Calculator calc = new Calculator();
         assertEquals(2, calc.dividir(6, 3), "El método dividir() debe devolver 2 para (6,3)");
+    }
+
+    @Test
+    void testDividirPorCero() {
+        Calculator calc = new Calculator();
+        Exception exception = assertThrows(ArithmeticException.class, () -> {
+            calc.dividir(6, 0);
+        });
+        assertEquals("No se puede dividir por cero", exception.getMessage(), "El método dividir() debe lanzar una excepción cuando el divisor es 0");
     }
 }
